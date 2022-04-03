@@ -10,3 +10,10 @@ https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributio
 https://www.reddit.com/r/Kotlin/comments/sjgc5g/wordle_solver_in_kotlin_compose_desktop/
 https://github.com/Nohus/WordleSolver
 
+update versions gradle
+
+search wordle github youtube 1337x udemy
+
+.editorconfig
+
+best version of JDK to use?
