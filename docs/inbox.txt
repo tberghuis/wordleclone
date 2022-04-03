@@ -7,5 +7,6 @@ final step, release reddit
 1st task
 https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md
 
+https://www.reddit.com/r/Kotlin/comments/sjgc5g/wordle_solver_in_kotlin_compose_desktop/
 https://github.com/Nohus/WordleSolver
 
