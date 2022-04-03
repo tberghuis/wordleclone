@@ -16,4 +16,4 @@ search wordle github youtube 1337x udemy
 
 .editorconfig
 
-best version of JDK to use?
+best version of JDK to use? 16 i guess
