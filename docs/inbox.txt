@@ -1,0 +1,11 @@
+jvm set to 11, is that ok
+
+find a good github reference
+mvp
+final step, release reddit
+
+1st task
+https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md
+
+https://github.com/Nohus/WordleSolver
+
