@@ -46,3 +46,6 @@ lets see how wordlesolver deals with keyevents
 
 word effect graphics...
 https://www.youtube.com/watch?v=WCSNzX3fxnE
+
+
+next task calc color

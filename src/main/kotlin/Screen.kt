@@ -21,21 +21,21 @@ val vm = ViewModel()
 @Composable
 fun Screen(windowState: WindowState) {
 
-  val wordleState = vm.wordleStateFlow.collectAsState()
-
-  val wordList = wordleState.value.wordList
-
+  val wordleState = vm.wordleStateFlow.collectAsState().value
+  val cursorRow = wordleState.cursorRow
+  val wordList = wordleState.wordList
+  val solution = wordleState.solution
 
   Column {
-    Text("hello screen ${wordleState.value.wordList[0]}")
+    Text("hello screen ${wordleState.wordList[0]}")
 
     for (i in 0..5) {
       Row {
         for (j in 0..4) {
           if (j >= wordList[i].length) {
-            RenderChar(null, i, j)
+            RenderChar(null, i, j, cursorRow, solution)
           } else {
-            RenderChar(wordList[i][j], i, j)
+            RenderChar(wordList[i][j], i, j, cursorRow, solution)
           }
         }
       }
@@ -51,10 +51,10 @@ fun Screen(windowState: WindowState) {
 
 
 @Composable
-fun RenderChar(c: Char?, row: Int, col: Int) {
+fun RenderChar(c: Char?, row: Int, col: Int, cursorRow: Int, solution: String) {
   val renderString = if (c == null) "" else "$c".uppercase()
 
-  val backgroundColor = calcBackgroundColor(renderString, row, col)
+  val backgroundColor = calcBackgroundColor(renderString, row, col, cursorRow, solution)
 
   Box(
     modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
@@ -66,39 +66,32 @@ fun RenderChar(c: Char?, row: Int, col: Int) {
   }
 }
 
-fun calcBackgroundColor(letter: String, row: Int, col: Int): Color {
-
+fun calcBackgroundColor(
+  letter: String, row: Int, col: Int,
+  cursorRow: Int, solution: String
+): Color {
+  //  println("calcBackgroundColor $letter $row $col $cursorRow $solution")
   // put in consts.kt file
   // green 0xff6aaa64
   // yellow 0xffc9b458
   // gray 0xff787c7e
-
-  return when (row) {
-
-    0 -> Color(0xff6aaa64)
-    1 -> Color(0xffc9b458)
-    else -> Color(0xff787c7e)
+  if (letter == "") {
+    return Color.White
   }
-
+  if (row >= cursorRow) {
+    return Color.White
+  }
+  if (!solution.contains(letter)) {
+    // gray
+    return Color(0xff787c7e)
+  }
+  if (solution[col] == letter[0]) {
+    // green
+    return Color(0xff6aaa64)
+  }
+  // yellow
+  return Color(0xffc9b458)
 }
-
-
-//@Composable
-//fun RenderCharWordComplete(c: Char?) {
-//  val renderString = if (c == null) "" else "$c".uppercase()
-//
-//  // todo calc background color
-//
-//  Box(
-//    modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
-//      .background(Color.LightGray)
-//  ) {
-//    Text(
-//      renderString, modifier = Modifier.padding(16.dp)
-//    )
-//  }
-//}
-
 
 @Composable
 fun PrintWindowPosition(windowState: WindowState) {
