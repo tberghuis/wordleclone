@@ -41,6 +41,21 @@ class ViewModel {
 
   fun removeLetter() {
     println("removeLetter")
+
+    val ws = wordleStateFlow.value
+    val word = ws.wordList[ws.cursorRow]
+
+    if (word.isEmpty()) {
+      return
+    }
+
+    val newWord = word.substring(0, word.length - 1)
+    val newWordList = ws.wordList.toMutableList()
+    newWordList[ws.cursorRow] = newWord
+
+    wordleStateFlow.value = ws.copy(
+      wordList = newWordList
+    )
   }
 
   fun onKeyUpEnter() {
