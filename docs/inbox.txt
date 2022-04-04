@@ -32,3 +32,8 @@ how to do reinstall without manual uninstall
 
 
 change default position or hot reload???
+
+
+next task typing...
+doitwrong
+look up and compare to github examples later
