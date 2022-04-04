@@ -49,3 +49,7 @@ https://www.youtube.com/watch?v=WCSNzX3fxnE
 
 
 next task calc color
+
+wordle in ios swift
+https://github.com/mischa-hildebrand/Wordle
+https://quickbirdstudios.com/blog/wordle-game-swiftui/

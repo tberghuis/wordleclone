@@ -1,16 +1,8 @@
-import androidx.compose.ui.input.key.KeyEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class ViewModel {
 
   val wordleStateFlow = MutableStateFlow(WordleState())
-
-
-//  fun updateWordTest() {
-//    val newWordList = listOf("H0000", "00000", "00000", "00000", "00000", "00000")
-//    wordleStateFlow.value = wordleStateFlow.value.copy(wordList = newWordList)
-//  }
-
 
   fun addLetter(letter: Char) {
     println("addLetter $letter")
