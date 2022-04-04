@@ -153,14 +153,17 @@ fun calcBackgroundColor(
   }
   if (!solution.contains(letter)) {
     // gray
-    return Color(0xff787c7e)
+//    return Color(0xff787c7e)
+    return COLORS.Gray
   }
   if (solution[col] == letter[0]) {
     // green
-    return Color(0xff6aaa64)
+//    return Color(0xff6aaa64)
+    return COLORS.Green
   }
   // yellow
-  return Color(0xffc9b458)
+//  return Color(0xffc9b458)
+  return COLORS.Yellow
 }
 
 @Composable
