@@ -49,7 +49,7 @@ fun Screen(windowState: WindowState) {
     }
 
     Spacer(Modifier.height(100.dp))
-    RenderKeyboard()
+    RenderKeyboard(wordleState)
 
     PrintWindowPosition(windowState)
 
@@ -59,30 +59,42 @@ fun Screen(windowState: WindowState) {
 // do shit wrong until i read reference source code
 // then refactor
 @Composable
-fun RenderKeyboard() {
+fun RenderKeyboard(wordleState: WordleState) {
 //  Text("keyboard here")
+
+  val renderKeysInRow: @Composable (row: List<String>) -> Unit = { row ->
+    for (k in row) RenderKey(
+      k,
+      deriveKeyBackgroundColor(k[0], wordleState)
+    ) {
+      vm.addLetter(k[0])
+    }
+  }
+
   val row1 = "QWERTYUIOP".toCharArray().map { "$it" }
   val row2 = "ASDFGHJKL".toCharArray().map { "$it" }
   val row3 = "ZXCVBNM".toCharArray().map { "$it" }
 
-  val onClickKey = { k: String ->
-    println("on click key")
-    vm.addLetter(k[0])
-  }
+
+
+
 
   Row() {
-    for (k in row1) RenderKey(k) { onClickKey(k) }
+//    for (k in row1) RenderKey(k) { onClickKey(k) }
+    renderKeysInRow(row1)
   }
   Row {
-    for (k in row2) RenderKey(k) { onClickKey(k) }
+    renderKeysInRow(row2)
   }
   Row {
-    RenderKey("enter") {
+    RenderKey("enter", Color.LightGray) {
       println("on click enter")
       vm.onKeyUpEnter()
     }
-    for (k in row3) RenderKey(k) { onClickKey(k) }
-    RenderKey("backspace") {
+
+    renderKeysInRow(row3)
+
+    RenderKey("backspace", Color.LightGray) {
       println("on click backspace")
       vm.removeLetter()
     }
@@ -90,14 +102,15 @@ fun RenderKeyboard() {
 
 }
 
+
 @Composable
-fun RenderKey(k: String, onClick: () -> Unit) {
+fun RenderKey(k: String, backgroundColor: Color, onClick: () -> Unit) {
   Box(
     // todo use wordle color from consts.kt
     modifier = Modifier
       .padding(10.dp)
       .clickable { onClick() }
-      .background(Color.Cyan)
+      .background(backgroundColor)
 
   ) {
     Text(

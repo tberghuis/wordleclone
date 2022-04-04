@@ -53,3 +53,18 @@ next task calc color
 wordle in ios swift
 https://github.com/mischa-hildebrand/Wordle
 https://quickbirdstudios.com/blog/wordle-game-swiftui/
+
+
+finish ui
+
+animations
+
+game won
+new game...
+word list
+consts.kt for hardcoded colors...
+
+set typedLettersMatched
+set typedLettersNoMatch
+
+check if word actually exists when press enter
