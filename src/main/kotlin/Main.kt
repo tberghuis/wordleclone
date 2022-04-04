@@ -68,7 +68,7 @@ fun handleKeyPress(event: KeyEvent): Boolean {
   }
   val c = event.awtEventOrNull?.keyChar
   if (c?.isLetter() == true) {
-    vm.addLetter(c)
+    vm.addLetter(c.uppercaseChar())
     return true
   }
   return false
