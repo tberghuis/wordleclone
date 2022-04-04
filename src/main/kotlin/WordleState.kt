@@ -4,11 +4,9 @@
 // or make WordleState var mutable state
 
 
-data class WordleState(val word: String = "00000")
+data class WordleState(
+  val wordList: List<String> = listOf("00000", "00000", "00000", "00000", "00000", "00000"),
+  val cursorRow: Int = 0,
+  val cursorCol: Int = 0
+)
 
-
-//{
-//
-////  val word = CharArray(5)
-//
-//}

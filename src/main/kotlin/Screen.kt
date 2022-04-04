@@ -14,15 +14,15 @@ fun Screen() {
 
   val wordleState = vm.wordleStateFlow.collectAsState()
 
-  val word = wordleState.value.word
+  val wordList = wordleState.value.wordList
 
 
   Column {
-    Text("hello screen ${wordleState.value.word}")
+    Text("hello screen ${wordleState.value.wordList[0]}")
 
     Row {
-      for (i in word.indices) {
-        RenderChar(word[i])
+      for (i in wordList[0].indices) {
+        RenderChar(wordList[0][i])
       }
     }
 

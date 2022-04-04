@@ -6,8 +6,12 @@ class ViewModel {
 
 
   fun updateWordTest() {
-    val newWord = "H0000"
-    wordleStateFlow.value = wordleStateFlow.value.copy(word = newWord)
+//    val newWord = "H0000"
+
+//    val wordList = wordleStateFlow.value.wordList
+    val newWordList = listOf("H0000", "00000", "00000", "00000", "00000", "00000")
+
+    wordleStateFlow.value = wordleStateFlow.value.copy(wordList = newWordList)
   }
 
 
