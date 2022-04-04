@@ -27,17 +27,20 @@ fun Screen(windowState: WindowState) {
   Column {
     Text("hello screen ${wordleState.value.wordList[0]}")
 
-    Row {
-      for (i in wordList[0].indices) {
-        RenderChar(wordList[0][i])
+    for (i in 0..5) {
+      Row {
+        for (j in 0..4) {
+          if (j >= wordList[i].length) {
+            RenderChar(null)
+          } else {
+            RenderChar(wordList[i][j])
+          }
+        }
       }
     }
 
-    Button(onClick = {
-      vm.updateWordTest()
-    }) {
-      Text("update word test")
-    }
+
+
 
     PrintWindowPosition(windowState)
 
@@ -46,16 +49,13 @@ fun Screen(windowState: WindowState) {
 
 
 @Composable
-fun RenderChar(c: Char) {
-
-  val renderString = if (c == '0') "" else "$c"
-
+fun RenderChar(c: Char?) {
+  val renderString = if (c == null) "" else "$c"
   Box(
     modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
   ) {
     Text(
       renderString, modifier = Modifier.padding(16.dp)
-
     )
   }
 }

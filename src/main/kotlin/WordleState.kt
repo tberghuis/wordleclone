@@ -5,8 +5,9 @@
 
 
 data class WordleState(
-  val wordList: List<String> = listOf("00000", "00000", "00000", "00000", "00000", "00000"),
+//  val wordList: List<String> = listOf("00000", "00000", "00000", "00000", "00000", "00000"),
+  val wordList: List<String> = listOf("", "", "", "", "", ""),
   val cursorRow: Int = 0,
-  val cursorCol: Int = 0
+//  val cursorCol: Int = 0
 )
 
