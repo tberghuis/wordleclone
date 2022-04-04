@@ -67,7 +67,19 @@ fun RenderChar(c: Char?, row: Int, col: Int) {
 }
 
 fun calcBackgroundColor(letter: String, row: Int, col: Int): Color {
-  return Color.LightGray
+
+  // put in consts.kt file
+  // green 0xff6aaa64
+  // yellow 0xffc9b458
+  // gray 0xff787c7e
+
+  return when (row) {
+
+    0 -> Color(0xff6aaa64)
+    1 -> Color(0xffc9b458)
+    else -> Color(0xff787c7e)
+  }
+
 }
 
 
