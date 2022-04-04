@@ -1,4 +1,5 @@
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
 
@@ -31,9 +33,9 @@ fun Screen(windowState: WindowState) {
       Row {
         for (j in 0..4) {
           if (j >= wordList[i].length) {
-            RenderChar(null)
+            RenderChar(null, i, j)
           } else {
-            RenderChar(wordList[i][j])
+            RenderChar(wordList[i][j], i, j)
           }
         }
       }
@@ -49,16 +51,41 @@ fun Screen(windowState: WindowState) {
 
 
 @Composable
-fun RenderChar(c: Char?) {
-  val renderString = if (c == null) "" else "$c"
+fun RenderChar(c: Char?, row: Int, col: Int) {
+  val renderString = if (c == null) "" else "$c".uppercase()
+
+  val backgroundColor = calcBackgroundColor(renderString, row, col)
+
   Box(
     modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
+      .background(backgroundColor)
   ) {
     Text(
       renderString, modifier = Modifier.padding(16.dp)
     )
   }
 }
+
+fun calcBackgroundColor(letter: String, row: Int, col: Int): Color {
+  return Color.LightGray
+}
+
+
+//@Composable
+//fun RenderCharWordComplete(c: Char?) {
+//  val renderString = if (c == null) "" else "$c".uppercase()
+//
+//  // todo calc background color
+//
+//  Box(
+//    modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
+//      .background(Color.LightGray)
+//  ) {
+//    Text(
+//      renderString, modifier = Modifier.padding(16.dp)
+//    )
+//  }
+//}
 
 
 @Composable
