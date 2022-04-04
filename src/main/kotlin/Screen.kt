@@ -65,18 +65,27 @@ fun RenderKeyboard() {
   val row2 = "ASDFGHJKL".toCharArray().map { "$it" }
   val row3 = "ZXCVBNM".toCharArray().map { "$it" }
 
-  val onClick = { println("on click") }
+  val onClickKey = { k: String ->
+    println("on click key")
+    vm.addLetter(k[0])
+  }
 
   Row() {
-    for (k in row1) RenderKey(k, onClick)
+    for (k in row1) RenderKey(k) { onClickKey(k) }
   }
   Row {
-    for (k in row2) RenderKey(k, onClick)
+    for (k in row2) RenderKey(k) { onClickKey(k) }
   }
   Row {
-    RenderKey("enter", onClick)
-    for (k in row3) RenderKey(k, onClick)
-    RenderKey("backspace", onClick)
+    RenderKey("enter") {
+      println("on click enter")
+      vm.onKeyUpEnter()
+    }
+    for (k in row3) RenderKey(k) { onClickKey(k) }
+    RenderKey("backspace") {
+      println("on click backspace")
+      vm.removeLetter()
+    }
   }
 
 }
