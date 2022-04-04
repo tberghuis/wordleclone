@@ -13,9 +13,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
 
-
+// doing it wrong, global singleton
 val vm = ViewModel()
-
 
 @Composable
 fun Screen(windowState: WindowState) {

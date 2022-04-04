@@ -8,6 +8,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.input.key.KeyEvent
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.type
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.*
 
@@ -33,7 +36,21 @@ fun main() = application {
   )
 
 
-  Window(onCloseRequest = ::exitApplication, state) {
+  Window(
+    onCloseRequest = ::exitApplication, state,
+    onKeyEvent = ::handleKeyPress
+  ) {
     Screen(state)
   }
+}
+
+// move to another file???
+fun handleKeyPress(event: KeyEvent): Boolean {
+  println("handleKeyPress $event")
+
+  if (event.type == KeyEventType.KeyUp) {
+//    vm.handleKeyPress(event)
+
+  }
+  return false
 }

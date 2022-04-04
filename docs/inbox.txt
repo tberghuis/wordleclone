@@ -37,3 +37,9 @@ change default position or hot reload???
 next task typing...
 doitwrong
 look up and compare to github examples later
+
+
+https://github.com/JetBrains/compose-jb/tree/master/tutorials
+keyboard...
+
+lets see how wordlesolver deals with keyevents
