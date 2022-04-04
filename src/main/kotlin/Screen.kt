@@ -1,14 +1,19 @@
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -25,7 +30,10 @@ fun Screen(windowState: WindowState) {
   val wordList = wordleState.wordList
   val solution = wordleState.solution
 
-  Column {
+  Column(
+    modifier = Modifier.fillMaxWidth(),
+    horizontalAlignment = Alignment.CenterHorizontally
+  ) {
     Text("hello screen ${wordleState.wordList[0]}")
 
     for (i in 0..5) {
@@ -40,11 +48,52 @@ fun Screen(windowState: WindowState) {
       }
     }
 
-
-
+    Spacer(Modifier.height(100.dp))
+    RenderKeyboard()
 
     PrintWindowPosition(windowState)
 
+  }
+}
+
+// do shit wrong until i read reference source code
+// then refactor
+@Composable
+fun RenderKeyboard() {
+//  Text("keyboard here")
+  val row1 = "QWERTYUIOP".toCharArray().map { "$it" }
+  val row2 = "ASDFGHJKL".toCharArray().map { "$it" }
+  val row3 = "ZXCVBNM".toCharArray().map { "$it" }
+
+  val onClick = { println("on click") }
+
+  Row() {
+    for (k in row1) RenderKey(k, onClick)
+  }
+  Row {
+    for (k in row2) RenderKey(k, onClick)
+  }
+  Row {
+    RenderKey("enter", onClick)
+    for (k in row3) RenderKey(k, onClick)
+    RenderKey("backspace", onClick)
+  }
+
+}
+
+@Composable
+fun RenderKey(k: String, onClick: () -> Unit) {
+  Box(
+    // todo use wordle color from consts.kt
+    modifier = Modifier
+      .padding(10.dp)
+      .clickable { onClick() }
+      .background(Color.Cyan)
+
+  ) {
+    Text(
+      k, modifier = Modifier.padding(16.dp)
+    )
   }
 }
 
