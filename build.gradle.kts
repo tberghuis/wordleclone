@@ -22,14 +22,14 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
   kotlinOptions.jvmTarget = "11"
-
-//  kotlinOptions {
-////     freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-//    kotlin.sourceSets.all {
-//      languageSettings.optIn("kotlin.RequiresOptIn")
-//    }
-//  }
 }
+
+// doesn't resolve compiler warning
+//plugins.withId("org.jetbrains.kotlin.multiplatform") {
+//  tasks.withType<KotlinCompile> {
+//    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+//  }
+//}
 
 compose.desktop {
   application {
