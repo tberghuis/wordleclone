@@ -8,8 +8,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.window.Window
-import androidx.compose.ui.window.application
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.*
 
 @Composable
 @Preview
@@ -26,7 +26,14 @@ fun App() {
 }
 
 fun main() = application {
-  Window(onCloseRequest = ::exitApplication) {
-    Screen()
+
+  val state = rememberWindowState(
+    placement = WindowPlacement.Maximized,
+    position = WindowPosition(1912.dp, 8.dp)
+  )
+
+
+  Window(onCloseRequest = ::exitApplication, state) {
+    Screen(state)
   }
 }

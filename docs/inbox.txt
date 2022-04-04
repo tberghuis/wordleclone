@@ -28,3 +28,7 @@ C:\Program Files\wordleclone
 
 how to get wordleclone added to start menu
 how to do reinstall without manual uninstall
+
+
+
+change default position or hot reload???
