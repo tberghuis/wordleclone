@@ -43,3 +43,6 @@ https://github.com/JetBrains/compose-jb/tree/master/tutorials
 keyboard...
 
 lets see how wordlesolver deals with keyevents
+
+word effect graphics...
+https://www.youtube.com/watch?v=WCSNzX3fxnE
