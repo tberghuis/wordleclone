@@ -87,14 +87,14 @@ fun RenderKeyboard(wordleState: WordleState) {
     renderKeysInRow(row2)
   }
   Row {
-    RenderKey("enter", Color.LightGray) {
+    RenderKey("enter", COLORS.Gray) {
       println("on click enter")
       vm.onKeyUpEnter()
     }
 
     renderKeysInRow(row3)
 
-    RenderKey("backspace", Color.LightGray) {
+    RenderKey("backspace", COLORS.Gray) {
       println("on click backspace")
       vm.removeLetter()
     }
