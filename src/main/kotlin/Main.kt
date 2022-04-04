@@ -51,17 +51,25 @@ fun main() = application {
 // This annotation should be used with the compiler argument '-opt-in=kotlin.RequiresOptIn'
 @OptIn(ExperimentalComposeUiApi::class)
 fun handleKeyPress(event: KeyEvent): Boolean {
-  println("handleKeyPress $event")
-  if (event.type == KeyEventType.KeyUp) {
-    if (event.key == Key.Backspace) {
+//  println("handleKeyPress $event")
+
+  if (event.type != KeyEventType.KeyUp) {
+    return false
+  }
+  when (event.key) {
+    Key.Backspace -> {
       vm.removeLetter()
       return true
     }
-    val c = event.awtEventOrNull?.keyChar
-    if (c?.isLetter() == true) {
-      vm.addLetter(c)
+    Key.Enter -> {
+      vm.onKeyUpEnter()
       return true
     }
+  }
+  val c = event.awtEventOrNull?.keyChar
+  if (c?.isLetter() == true) {
+    vm.addLetter(c)
+    return true
   }
   return false
 }

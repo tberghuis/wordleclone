@@ -45,5 +45,21 @@ class ViewModel {
 
   fun onKeyUpEnter() {
     println("onKeyUpEnter")
+    // todo check if game already over return
+
+    val ws = wordleStateFlow.value
+    val word = ws.wordList[ws.cursorRow]
+
+    if (word.length != 5) {
+      return
+    }
+
+    // todo calculate word result
+
+
+    wordleStateFlow.value = ws.copy(
+      cursorRow = ws.cursorRow + 1
+    )
+
   }
 }
