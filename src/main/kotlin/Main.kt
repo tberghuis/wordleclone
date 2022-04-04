@@ -8,9 +8,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.input.key.KeyEvent
-import androidx.compose.ui.input.key.KeyEventType
-import androidx.compose.ui.input.key.type
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.awt.awtEvent
+import androidx.compose.ui.awt.awtEventOrNull
+import androidx.compose.ui.input.key.*
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.*
 
@@ -45,12 +46,22 @@ fun main() = application {
 }
 
 // move to another file???
+
+// how the hell get rid of warning
+// This annotation should be used with the compiler argument '-opt-in=kotlin.RequiresOptIn'
+@OptIn(ExperimentalComposeUiApi::class)
 fun handleKeyPress(event: KeyEvent): Boolean {
   println("handleKeyPress $event")
-
   if (event.type == KeyEventType.KeyUp) {
-//    vm.handleKeyPress(event)
-
+    if (event.key == Key.Backspace) {
+      vm.removeLetter()
+      return true
+    }
+    val c = event.awtEventOrNull?.keyChar
+    if (c?.isLetter() == true) {
+      vm.addLetter(c)
+      return true
+    }
   }
   return false
 }
