@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -112,14 +113,16 @@ fun RenderChar(c: Char?, row: Int, col: Int, cursorRow: Int, solution: String) {
   val renderString = if (c == null) "" else "$c".uppercase()
   val backgroundColor = calcBackgroundColor(renderString, row, col, cursorRow, solution)
   Box(
-    modifier = Modifier.padding(10.dp).let {
-      if (backgroundColor == Color.White) {
-        it.border(BorderStroke(2.dp, Color.LightGray))
-      } else {
-        it
+    modifier = Modifier.padding(10.dp)
+      .size(62.dp).let {
+        if (backgroundColor == Color.White) {
+          it.border(BorderStroke(2.dp, Color.LightGray))
+        } else {
+          it
+        }
       }
-    }
-      .background(backgroundColor)
+      .background(backgroundColor),
+    contentAlignment = Alignment.Center
   ) {
     Text(
       renderString, modifier = Modifier.padding(16.dp)
