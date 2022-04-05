@@ -78,3 +78,15 @@ testing doc .txt
 
 next task,
 keyboard ui styling
+fuck doing that and the animations
+my goal is finished mvp
+
+next task, game finished logic, or read code of example
+
+minimum window size, add scrollbars if overflow.... meh
+
+list of valid words.txt
+list of solution words.txt
+
+each play pick a random work
+
