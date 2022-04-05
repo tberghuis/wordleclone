@@ -57,8 +57,8 @@ fun Screen(windowState: WindowState) {
 
   }
 
-  SnackbarDemo()
-
+//  SnackbarDemo()
+  SnackbarContainer()
 }
 
 // do shit wrong until i read reference source code

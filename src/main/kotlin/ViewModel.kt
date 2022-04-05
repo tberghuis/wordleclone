@@ -1,9 +1,15 @@
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 
 // I could make this a singleton object, which is bad in regard to testing
 class ViewModel {
 
   val wordleStateFlow = MutableStateFlow(WordleState())
+
+  val snackbarSharedFlow = MutableSharedFlow<String>()
 
   fun addLetter(letter: Char) {
     println("addLetter $letter")
@@ -64,10 +70,19 @@ class ViewModel {
 
     // todo calculate word result
 
+    // if not in word list
+    // emit show snackbar
+    // return
+    if (!validWordList.contains(word)) {
+      // is this the correct scope for compse desktop?
+      CoroutineScope(Dispatchers.Default).launch {
+        snackbarSharedFlow.emit("Not in word list")
+      }
+      return
+    }
 
     wordleStateFlow.value = ws.copy(
       cursorRow = ws.cursorRow + 1
     )
-
   }
 }
