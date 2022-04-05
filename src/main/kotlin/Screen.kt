@@ -112,7 +112,13 @@ fun RenderChar(c: Char?, row: Int, col: Int, cursorRow: Int, solution: String) {
   val renderString = if (c == null) "" else "$c".uppercase()
   val backgroundColor = calcBackgroundColor(renderString, row, col, cursorRow, solution)
   Box(
-    modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
+    modifier = Modifier.padding(10.dp).let {
+      if (backgroundColor == Color.White) {
+        it.border(BorderStroke(2.dp, Color.LightGray))
+      } else {
+        it
+      }
+    }
       .background(backgroundColor)
   ) {
     Text(
