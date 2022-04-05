@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
+import tmp.SnackbarDemo
 
 // doing it wrong, global singleton
 val vm = ViewModel()
@@ -55,6 +56,9 @@ fun Screen(windowState: WindowState) {
     PrintWindowPosition(windowState)
 
   }
+
+  SnackbarDemo()
+
 }
 
 // do shit wrong until i read reference source code
