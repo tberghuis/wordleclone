@@ -26,17 +26,18 @@ val vm = ViewModel()
 
 @Composable
 fun Screen(windowState: WindowState) {
-
   val wordleState = vm.wordleStateFlow.collectAsState().value
   val cursorRow = wordleState.cursorRow
   val wordList = wordleState.wordList
   val solution = wordleState.solution
 
+  SnackbarContainer()
+
   Column(
     modifier = Modifier.fillMaxWidth(),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
-    Text("hello screen ${wordleState.wordList[0]}")
+    Spacer(Modifier.height(100.dp))
 
     for (i in 0..5) {
       Row {
@@ -54,11 +55,7 @@ fun Screen(windowState: WindowState) {
     RenderKeyboard(wordleState)
 
     PrintWindowPosition(windowState)
-
   }
-
-//  SnackbarDemo()
-  SnackbarContainer()
 }
 
 // do shit wrong until i read reference source code
