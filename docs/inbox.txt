@@ -1,10 +1,6 @@
-jvm set to 11, is that ok
-
-find a good github reference
 mvp
 final step, release reddit
 
-1st task
 https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md
 
 https://www.reddit.com/r/Kotlin/comments/sjgc5g/wordle_solver_in_kotlin_compose_desktop/
@@ -74,12 +70,6 @@ https://www.reddit.com/r/androiddev/comments/sbfqx7/ive_created_faradle_a_wordle
 https://github.com/adibfara/Faradle
 
 testing doc .txt
-
-
-next task,
-keyboard ui styling
-fuck doing that and the animations
-my goal is finished mvp
 
 next task, game finished logic, or read code of example
 
