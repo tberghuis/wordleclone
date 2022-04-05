@@ -67,11 +67,13 @@ next task, game finished logic, or read code of example
 
 minimum window size, add scrollbars if overflow.... meh
 
-list of valid words.txt
-list of solution words.txt
+hardcode list of valid words.kt
+hardcode list of solution words.kt
 
 each play pick a random work
 
 when press enter, check if valid word
 
 ui styling letter cells
+
+add to upwork portfolio

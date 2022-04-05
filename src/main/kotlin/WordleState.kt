@@ -15,4 +15,3 @@ data class WordleState(
 //  val typedLettersPositionMatch: Set<Char> = setOf(),
 //  val typedLettersMatch: Set<Char> = setOf()
 )
-
