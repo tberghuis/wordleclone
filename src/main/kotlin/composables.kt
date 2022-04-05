@@ -10,7 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,10 +19,6 @@ import kotlinx.coroutines.flow.collect
 // need a better name
 @Composable
 fun SnackbarContainer() {
-
-  // this component to watch a SharedFlow in VM from LaunchedEffect
-
-//  val scope = rememberCoroutineScope()
   val snackbarHostState = remember { SnackbarHostState() }
 
   LaunchedEffect(Unit) {
@@ -32,20 +27,9 @@ fun SnackbarContainer() {
     }
   }
 
-
-//  FloatingActionButton(
-//    onClick = {
-//      scope.launch {
-//        snackbarHostState.showSnackbar("Not in word list")
-//      }
-//    },
-//    content = { Icon(imageVector = Icons.Default.Add, contentDescription = "") }
-//  )
-
   SnackbarHost(
     hostState = snackbarHostState,
     snackbar = { snackbarData: SnackbarData ->
-
       Box(Modifier.fillMaxSize()) {
         Card(
           Modifier
