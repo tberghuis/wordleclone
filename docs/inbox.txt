@@ -72,3 +72,5 @@ list of solution words.txt
 each play pick a random work
 
 when press enter, check if valid word
+
+ui styling letter cells
