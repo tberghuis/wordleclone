@@ -31,8 +31,6 @@ fun Screen(windowState: WindowState) {
   val wordList = wordleState.wordList
   val solution = wordleState.solution
 
-  SnackbarContainer()
-
   Column(
     modifier = Modifier.fillMaxWidth(),
     horizontalAlignment = Alignment.CenterHorizontally
@@ -56,6 +54,7 @@ fun Screen(windowState: WindowState) {
 
     PrintWindowPosition(windowState)
   }
+  SnackbarContainer()
 }
 
 // do shit wrong until i read reference source code

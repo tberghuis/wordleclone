@@ -79,3 +79,5 @@ ui styling letter cells
 add to upwork portfolio
 
 try to port to compose for web
+
+kotlin script transform words.txt to listOf("fgdg",...) words.kt
