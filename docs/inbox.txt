@@ -8,15 +8,6 @@ https://github.com/Nohus/WordleSolver
 
 update versions gradle
 
-search wordle github youtube 1337x udemy
-
-.editorconfig
-
-best version of JDK to use? 16 i guess
-
-
-change the name wordle in the source code???
-
 msi build artifact
 C:\Users\tom\Desktop\myprojects\desktop\wordleclone\build\compose\binaries\main\msi
 msi default install dir
