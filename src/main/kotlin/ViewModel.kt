@@ -1,5 +1,6 @@
 import kotlinx.coroutines.flow.MutableStateFlow
 
+// I could make this a singleton object, which is bad in regard to testing
 class ViewModel {
 
   val wordleStateFlow = MutableStateFlow(WordleState())
