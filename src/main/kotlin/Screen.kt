@@ -60,8 +60,6 @@ fun Screen(windowState: WindowState) {
 // then refactor
 @Composable
 fun RenderKeyboard(wordleState: WordleState) {
-//  Text("keyboard here")
-
   val renderKeysInRow: @Composable (row: List<String>) -> Unit = { row ->
     for (k in row) RenderKey(
       k,
@@ -75,12 +73,7 @@ fun RenderKeyboard(wordleState: WordleState) {
   val row2 = "ASDFGHJKL".toCharArray().map { "$it" }
   val row3 = "ZXCVBNM".toCharArray().map { "$it" }
 
-
-
-
-
-  Row() {
-//    for (k in row1) RenderKey(k) { onClickKey(k) }
+  Row {
     renderKeysInRow(row1)
   }
   Row {
@@ -91,27 +84,22 @@ fun RenderKeyboard(wordleState: WordleState) {
       println("on click enter")
       vm.onKeyUpEnter()
     }
-
     renderKeysInRow(row3)
-
     RenderKey("backspace", COLORS.LightGray) {
       println("on click backspace")
       vm.removeLetter()
     }
   }
-
 }
-
 
 @Composable
 fun RenderKey(k: String, backgroundColor: Color, onClick: () -> Unit) {
+  // todo change font color to white if backgroundColor = (gray, green or yellow)
   Box(
-    // todo use wordle color from consts.kt
     modifier = Modifier
       .padding(10.dp)
       .clickable { onClick() }
       .background(backgroundColor)
-
   ) {
     Text(
       k, modifier = Modifier.padding(16.dp)
@@ -119,13 +107,10 @@ fun RenderKey(k: String, backgroundColor: Color, onClick: () -> Unit) {
   }
 }
 
-
 @Composable
 fun RenderChar(c: Char?, row: Int, col: Int, cursorRow: Int, solution: String) {
   val renderString = if (c == null) "" else "$c".uppercase()
-
   val backgroundColor = calcBackgroundColor(renderString, row, col, cursorRow, solution)
-
   Box(
     modifier = Modifier.border(BorderStroke(2.dp, Color.Black))
       .background(backgroundColor)
@@ -140,11 +125,6 @@ fun calcBackgroundColor(
   letter: String, row: Int, col: Int,
   cursorRow: Int, solution: String
 ): Color {
-  //  println("calcBackgroundColor $letter $row $col $cursorRow $solution")
-  // put in consts.kt file
-  // green 0xff6aaa64
-  // yellow 0xffc9b458
-  // gray 0xff787c7e
   if (letter == "") {
     return Color.White
   }
@@ -152,28 +132,19 @@ fun calcBackgroundColor(
     return Color.White
   }
   if (!solution.contains(letter)) {
-    // gray
-//    return Color(0xff787c7e)
     return COLORS.Gray
   }
   if (solution[col] == letter[0]) {
-    // green
-//    return Color(0xff6aaa64)
     return COLORS.Green
   }
-  // yellow
-//  return Color(0xffc9b458)
   return COLORS.Yellow
 }
 
 @Composable
 fun PrintWindowPosition(windowState: WindowState) {
-
   Button(onClick = {
     println("window position ${windowState.position}")
   }) {
     Text("print window position")
   }
-
-
 }
