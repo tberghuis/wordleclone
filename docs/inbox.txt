@@ -58,6 +58,7 @@ check if word actually exists when press enter
 
 
 https://www.reddit.com/r/androiddev/comments/sbfqx7/ive_created_faradle_a_wordle_made_completely_in/
+read source code, android reference
 https://github.com/adibfara/Faradle
 
 testing doc .txt
