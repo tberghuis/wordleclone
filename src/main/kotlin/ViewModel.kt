@@ -68,18 +68,15 @@ class ViewModel {
       return
     }
 
-    // todo calculate word result
-
-    // if not in word list
-    // emit show snackbar
-    // return
     if (!validWordList.contains(word)) {
-      // is this the correct scope for compse desktop?
+      // is this the correct scope for compose desktop?
       CoroutineScope(Dispatchers.Default).launch {
         snackbarSharedFlow.emit("Not in word list")
       }
       return
     }
+
+    // todo check if game won or lost
 
     wordleStateFlow.value = ws.copy(
       cursorRow = ws.cursorRow + 1
