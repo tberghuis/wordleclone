@@ -1,6 +1,5 @@
 import androidx.compose.ui.graphics.Color
 
-
 // doitwrong in future use sealed class or enum
 // green 0xff6aaa64
 // yellow 0xffc9b458
@@ -45,6 +44,7 @@ fun deriveKeyBackgroundColor(key: Char, wordleState: WordleState): Color {
   return COLORS.LightGray
 }
 
+// poor mans testing method
 //fun main() {
 //  println("hello")
 //  val wl = listOf("TOMMY", "", "", "", "", "")
