@@ -20,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
-import tmp.SnackbarDemo
 
 // doing it wrong, global singleton
 val vm = ViewModel()
@@ -36,14 +35,11 @@ fun Screen(windowState: WindowState) {
     modifier = Modifier.fillMaxWidth(),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
-
-
     Column(
       Modifier.height(150.dp),
       verticalArrangement = Arrangement.Bottom,
       horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
       if (wordleState.gameState != GameState.PLAYING) {
         Button(onClick = {
           vm.newGame()
@@ -51,17 +47,13 @@ fun Screen(windowState: WindowState) {
           Text("New Game")
         }
       }
-
       if (wordleState.gameState == GameState.LOST) {
         Text(
           wordleState.solution,
           modifier = Modifier.padding(15.dp)
         )
       }
-
-
     }
-
     for (i in 0..5) {
       Row {
         for (j in 0..4) {
@@ -76,7 +68,6 @@ fun Screen(windowState: WindowState) {
 
     Spacer(Modifier.height(100.dp))
     RenderKeyboard(wordleState)
-
 //    PrintWindowPosition(windowState)
   }
   SnackbarContainer()
