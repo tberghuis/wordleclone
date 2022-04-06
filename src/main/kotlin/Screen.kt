@@ -2,6 +2,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -36,7 +37,13 @@ fun Screen(windowState: WindowState) {
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
 
-    Box(Modifier.height(100.dp), contentAlignment = Alignment.BottomCenter) {
+
+    Column(
+      Modifier.height(150.dp),
+      verticalArrangement = Arrangement.Bottom,
+      horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
       if (wordleState.gameState != GameState.PLAYING) {
         Button(onClick = {
           vm.newGame()
@@ -44,6 +51,15 @@ fun Screen(windowState: WindowState) {
           Text("New Game")
         }
       }
+
+      if (wordleState.gameState == GameState.LOST) {
+        Text(
+          wordleState.solution,
+          modifier = Modifier.padding(15.dp)
+        )
+      }
+
+
     }
 
     for (i in 0..5) {
