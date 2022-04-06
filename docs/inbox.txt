@@ -85,3 +85,6 @@ kotlin script transform words.txt to listOf("fgdg",...) words.kt
 let mum try the game
 update top words
 update valid words
+
+future
+  keep a running score...
