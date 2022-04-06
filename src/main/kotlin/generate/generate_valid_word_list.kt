@@ -1,5 +1,7 @@
 package generate
 
+import java.io.File
+
 // THIS SHOULD Be a gradle task....
 // one thing at a time
 // manual process for now
@@ -18,5 +20,8 @@ class GenWordListKt {
 
 fun main() {
   println("hello generate")
-  GenWordListKt()
+//  GenWordListKt()
+
+  File("src/main/kotlin/valid_words.kt").writeText("this is a test")
+
 }
