@@ -2,6 +2,9 @@ package generate
 
 import java.io.File
 
+// NOTE this is now obsolete
+
+
 // THIS SHOULD Be a gradle task....
 // one thing at a time
 // manual process for now
