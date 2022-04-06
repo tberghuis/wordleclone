@@ -1,0 +1,4 @@
+msi build artifact
+C:\Users\tom\Desktop\myprojects\desktop\wordleclone\build\compose\binaries\main\msi
+msi default install dir
+C:\Program Files\wordleclone

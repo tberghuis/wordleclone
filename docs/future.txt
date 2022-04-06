@@ -3,3 +3,9 @@ keyboard ui styling
 animations
 
 android version
+
+
+msi install
+  add to program list
+  allow update to overwrite
+  https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md

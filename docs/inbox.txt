@@ -1,21 +1,5 @@
-mvp
+
 final step, release reddit
-
-https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md
-
-https://www.reddit.com/r/Kotlin/comments/sjgc5g/wordle_solver_in_kotlin_compose_desktop/
-https://github.com/Nohus/WordleSolver
-
-update versions gradle
-
-msi build artifact
-C:\Users\tom\Desktop\myprojects\desktop\wordleclone\build\compose\binaries\main\msi
-msi default install dir
-C:\Program Files\wordleclone
-
-how to get wordleclone added to start menu
-how to do reinstall without manual uninstall
-
 
 
 change default position or hot reload???
@@ -90,3 +74,8 @@ future
   keep a running score...
 
 get UI to more closely match... padding, text color, font...
+
+README.md ... copy from other projects
+
+post r / kotlin
+build msi, link in readme
