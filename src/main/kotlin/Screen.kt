@@ -123,7 +123,7 @@ fun RenderKey(k: String, backgroundColor: Color, onClick: () -> Unit) {
   // todo change font color to white if backgroundColor = (gray, green or yellow)
   Box(
     modifier = Modifier
-      .padding(10.dp)
+      .padding(5.dp)
       .clickable { onClick() }
       .background(backgroundColor)
   ) {
@@ -138,7 +138,7 @@ fun RenderChar(c: Char?, row: Int, col: Int, cursorRow: Int, solution: String) {
   val renderString = if (c == null) "" else "$c".uppercase()
   val backgroundColor = calcBackgroundColor(renderString, row, col, cursorRow, solution)
   Box(
-    modifier = Modifier.padding(10.dp)
+    modifier = Modifier.padding(5.dp)
       .size(62.dp).let {
         if (backgroundColor == Color.White) {
           it.border(BorderStroke(2.dp, Color.LightGray))
