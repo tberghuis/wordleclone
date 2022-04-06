@@ -36,7 +36,7 @@ fun Screen(windowState: WindowState) {
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
     Column(
-      Modifier.height(150.dp),
+      Modifier.height(100.dp),
       verticalArrangement = Arrangement.Bottom,
       horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -66,7 +66,7 @@ fun Screen(windowState: WindowState) {
       }
     }
 
-    Spacer(Modifier.height(100.dp))
+    Spacer(Modifier.height(10.dp))
     RenderKeyboard(wordleState)
 //    PrintWindowPosition(windowState)
   }
