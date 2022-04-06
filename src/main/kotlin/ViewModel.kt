@@ -80,7 +80,6 @@ class ViewModel {
 
   fun onKeyUpEnter() {
     println("onKeyUpEnter")
-    // todo check if game already over return
 
     val ws = wordleStateFlow.value
     if (ws.gameState != GameState.PLAYING) {
@@ -122,7 +121,6 @@ class ViewModel {
       )
       return
     }
-
 
     wordleStateFlow.value = ws.copy(
       cursorRow = ws.cursorRow + 1
