@@ -38,7 +38,9 @@ fun Screen(windowState: WindowState) {
 
     Box(Modifier.height(100.dp), contentAlignment = Alignment.BottomCenter) {
       if (wordleState.gameState != GameState.PLAYING) {
-        Button(onClick = {}) {
+        Button(onClick = {
+          vm.newGame()
+        }) {
           Text("New Game")
         }
       }

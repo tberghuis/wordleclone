@@ -17,6 +17,13 @@ class ViewModel {
     wordleStateFlow.value = wordleStateFlow.value.copy(solution = solution)
   }
 
+  fun newGame() {
+    val solution = TOP_WORDS.random()
+    val ws = WordleState(solution = solution)
+    wordleStateFlow.value = ws
+  }
+
+
   fun addLetter(letter: Char) {
     println("addLetter $letter")
     val ws = wordleStateFlow.value
