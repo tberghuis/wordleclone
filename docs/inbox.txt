@@ -3,7 +3,6 @@ final step, release reddit
 
 testing doc .txt
 
-
 add to upwork portfolio
 
 try to port to compose for web
@@ -16,3 +15,5 @@ README.md ... copy from other projects
 
 post r / kotlin
 build msi, link in readme
+
+clean source code
