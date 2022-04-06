@@ -1,1 +1,3 @@
-this is a test
+val VALID_WORDS = listOf(
+"string","list","hello",
+)

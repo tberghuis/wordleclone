@@ -22,6 +22,17 @@ fun main() {
   println("hello generate")
 //  GenWordListKt()
 
-  File("src/main/kotlin/valid_words.kt").writeText("this is a test")
+  val sl = listOf("string", "list", "hello")
 
+  var sl2 = ""
+  sl.forEach {
+    sl2 += "\"$it\","
+  }
+
+  val wholeFile = """
+  val VALID_WORDS = listOf(
+  $sl2
+  )
+""".trimIndent()
+  File("src/main/kotlin/valid_words.kt").writeText(wholeFile)
 }
