@@ -21,6 +21,11 @@ class ViewModel {
     println("addLetter $letter")
     val ws = wordleStateFlow.value
 
+    // i should really block calling this in the UI layer
+    if (ws.gameState != GameState.PLAYING) {
+      return
+    }
+
     // word being edited
     val word = ws.wordList[ws.cursorRow]
     var newWord = word
@@ -50,7 +55,7 @@ class ViewModel {
     val ws = wordleStateFlow.value
     val word = ws.wordList[ws.cursorRow]
 
-    if (word.isEmpty()) {
+    if (word.isEmpty() || ws.gameState != GameState.PLAYING) {
       return
     }
 
@@ -70,7 +75,7 @@ class ViewModel {
     val ws = wordleStateFlow.value
     val word = ws.wordList[ws.cursorRow]
 
-    if (word.length != 5) {
+    if (word.length != 5 || ws.gameState != GameState.PLAYING) {
       return
     }
 
@@ -90,7 +95,8 @@ class ViewModel {
         snackbarSharedFlow.emit("Winner")
       }
       wordleStateFlow.value = ws.copy(
-        gameState = GameState.WON
+        gameState = GameState.WON,
+        cursorRow = ws.cursorRow + 1
       )
       return
     }
