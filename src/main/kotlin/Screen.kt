@@ -35,7 +35,14 @@ fun Screen(windowState: WindowState) {
     modifier = Modifier.fillMaxWidth(),
     horizontalAlignment = Alignment.CenterHorizontally
   ) {
-    Spacer(Modifier.height(100.dp))
+
+    Box(Modifier.height(100.dp), contentAlignment = Alignment.BottomCenter) {
+      if (wordleState.gameState != GameState.PLAYING) {
+        Button(onClick = {}) {
+          Text("New Game")
+        }
+      }
+    }
 
     for (i in 0..5) {
       Row {
