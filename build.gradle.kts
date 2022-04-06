@@ -22,6 +22,7 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
   kotlinOptions.jvmTarget = "11"
+//  kotlinOptions.jvmTarget = "16"
 }
 
 // doesn't resolve compiler warning
@@ -38,6 +39,10 @@ compose.desktop {
       targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
       packageName = "wordleclone"
       packageVersion = "1.0.0"
+
+      windows {
+        menuGroup = "Wordle Clone"
+      }
     }
   }
 }
