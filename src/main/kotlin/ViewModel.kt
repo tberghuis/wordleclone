@@ -53,9 +53,12 @@ class ViewModel {
     println("removeLetter")
 
     val ws = wordleStateFlow.value
+    if (ws.gameState != GameState.PLAYING) {
+      return
+    }
     val word = ws.wordList[ws.cursorRow]
 
-    if (word.isEmpty() || ws.gameState != GameState.PLAYING) {
+    if (word.isEmpty()) {
       return
     }
 
@@ -73,9 +76,11 @@ class ViewModel {
     // todo check if game already over return
 
     val ws = wordleStateFlow.value
+    if (ws.gameState != GameState.PLAYING) {
+      return
+    }
     val word = ws.wordList[ws.cursorRow]
-
-    if (word.length != 5 || ws.gameState != GameState.PLAYING) {
+    if (word.length != 5) {
       return
     }
 
@@ -87,8 +92,6 @@ class ViewModel {
       return
     }
 
-    // todo check if game won or lost
-
     // check if won, add to game state
     if (word == ws.solution) {
       CoroutineScope(Dispatchers.Default).launch {
@@ -96,6 +99,18 @@ class ViewModel {
       }
       wordleStateFlow.value = ws.copy(
         gameState = GameState.WON,
+        cursorRow = ws.cursorRow + 1
+      )
+      return
+    }
+
+    // game lost
+    if (ws.cursorRow == 5) {
+      CoroutineScope(Dispatchers.Default).launch {
+        snackbarSharedFlow.emit("Loser")
+      }
+      wordleStateFlow.value = ws.copy(
+        gameState = GameState.LOST,
         cursorRow = ws.cursorRow + 1
       )
       return
