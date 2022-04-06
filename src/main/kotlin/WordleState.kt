@@ -6,12 +6,13 @@
 // is it ok to stick all state in single data class?
 // probably, doitwrong
 
+enum class GameState {
+  PLAYING, WON, LOST
+}
+
 data class WordleState(
   val wordList: List<String> = listOf("", "", "", "", "", ""),
   val cursorRow: Int = 0,
   val solution: String = "TOMMY",
-
-  // better off to derive this state
-//  val typedLettersPositionMatch: Set<Char> = setOf(),
-//  val typedLettersMatch: Set<Char> = setOf()
+  val gameState: GameState = GameState.PLAYING
 )

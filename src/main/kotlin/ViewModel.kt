@@ -84,6 +84,18 @@ class ViewModel {
 
     // todo check if game won or lost
 
+    // check if won, add to game state
+    if (word == ws.solution) {
+      CoroutineScope(Dispatchers.Default).launch {
+        snackbarSharedFlow.emit("Winner")
+      }
+      wordleStateFlow.value = ws.copy(
+        gameState = GameState.WON
+      )
+      return
+    }
+
+
     wordleStateFlow.value = ws.copy(
       cursorRow = ws.cursorRow + 1
     )
