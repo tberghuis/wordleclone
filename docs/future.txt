@@ -9,3 +9,10 @@ msi install
   add to program list
   allow update to overwrite
   https://github.com/JetBrains/compose-jb/blob/master/tutorials/Native_distributions_and_local_execution/README.md
+
+minimum window size, add scrollbars if overflow
+
+keep a running score/stats
+
+
+get UI to more closely match... padding, text color, font...

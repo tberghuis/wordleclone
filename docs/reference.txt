@@ -1,3 +1,13 @@
 https://www.reddit.com/r/Kotlin/comments/sjgc5g/wordle_solver_in_kotlin_compose_desktop/
 https://github.com/Nohus/WordleSolver
 
+word effect graphics...
+https://www.youtube.com/watch?v=WCSNzX3fxnE
+
+wordle in ios swift
+https://github.com/mischa-hildebrand/Wordle
+https://quickbirdstudios.com/blog/wordle-game-swiftui/
+
+https://www.reddit.com/r/androiddev/comments/sbfqx7/ive_created_faradle_a_wordle_made_completely_in/
+read source code, android reference
+https://github.com/adibfara/Faradle

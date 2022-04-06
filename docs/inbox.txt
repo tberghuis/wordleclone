@@ -1,79 +1,16 @@
 
 final step, release reddit
 
-
-change default position or hot reload???
-
-
-next task typing...
-doitwrong
-look up and compare to github examples later
-
-
-https://github.com/JetBrains/compose-jb/tree/master/tutorials
-keyboard...
-
-lets see how wordlesolver deals with keyevents
-
-word effect graphics...
-https://www.youtube.com/watch?v=WCSNzX3fxnE
-
-
-next task calc color
-
-wordle in ios swift
-https://github.com/mischa-hildebrand/Wordle
-https://quickbirdstudios.com/blog/wordle-game-swiftui/
-
-
-finish ui
-
-animations
-
-game won
-new game...
-word list
-consts.kt for hardcoded colors...
-
-set typedLettersMatched
-set typedLettersNoMatch
-
-check if word actually exists when press enter
-
-
-https://www.reddit.com/r/androiddev/comments/sbfqx7/ive_created_faradle_a_wordle_made_completely_in/
-read source code, android reference
-https://github.com/adibfara/Faradle
-
 testing doc .txt
 
-next task, game finished logic, or read code of example
-
-minimum window size, add scrollbars if overflow.... meh
-
-hardcode list of valid words.kt
-hardcode list of solution words.kt
-
-each play pick a random work
-
-when press enter, check if valid word
-
-ui styling letter cells
 
 add to upwork portfolio
 
 try to port to compose for web
 
-kotlin script transform words.txt to listOf("fgdg",...) words.kt
+port to android
 
 let mum try the game
-update top words
-update valid words
-
-future
-  keep a running score...
-
-get UI to more closely match... padding, text color, font...
 
 README.md ... copy from other projects
 
