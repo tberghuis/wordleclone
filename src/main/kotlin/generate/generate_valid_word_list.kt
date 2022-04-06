@@ -9,9 +9,6 @@ import java.io.File
 // is there anyway to call getResource from main()
 class GenWordListKt {
   init {
-//    val validWords = javaClass.classLoader.getResource("valid_words.txt")?.readText()?.lines()
-//    writeListToFile(validWords!!)
-
     genWords("valid_words.txt", "VALID_WORDS", "src/main/kotlin/valid_words.kt")
     genWords("top_words.txt", "TOP_WORDS", "src/main/kotlin/top_words.kt")
   }
@@ -31,19 +28,6 @@ class GenWordListKt {
       File(ktFile).writeText(wholeFile)
     }
   }
-
-//  private fun writeListToFile(validWords: List<String>) {
-//    var sl2 = ""
-//    validWords.forEach {
-//      sl2 += "\"$it\","
-//    }
-//    val wholeFile = """
-//      val VALID_WORDS = listOf(
-//        $sl2
-//      )
-//      """.trimIndent()
-//    File("src/main/kotlin/valid_words.kt").writeText(wholeFile)
-//  }
 }
 
 fun main() {
