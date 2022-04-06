@@ -68,7 +68,7 @@ class ViewModel {
       return
     }
 
-    if (!validWordList.contains(word)) {
+    if (!VALID_WORDS.contains(word)) {
       // is this the correct scope for compose desktop?
       CoroutineScope(Dispatchers.Default).launch {
         snackbarSharedFlow.emit("Not in word list")
