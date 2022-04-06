@@ -33,7 +33,7 @@ fun SnackbarContainer() {
       Box(Modifier.fillMaxSize()) {
         Card(
           Modifier
-            .padding(100.dp)
+            .padding(200.dp)
             .align(Alignment.TopCenter)
             .background(Color.Black)
             .padding(16.dp)

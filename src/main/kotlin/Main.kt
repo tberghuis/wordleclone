@@ -8,7 +8,7 @@ import androidx.compose.ui.window.*
 fun main() = application {
   val state = rememberWindowState(
     placement = WindowPlacement.Maximized,
-    position = WindowPosition(1912.dp, 8.dp)
+//    position = WindowPosition(1912.dp, 8.dp)
   )
   Window(
     onCloseRequest = ::exitApplication, state,
