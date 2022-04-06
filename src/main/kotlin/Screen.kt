@@ -61,7 +61,7 @@ fun Screen(windowState: WindowState) {
     Spacer(Modifier.height(100.dp))
     RenderKeyboard(wordleState)
 
-    PrintWindowPosition(windowState)
+//    PrintWindowPosition(windowState)
   }
   SnackbarContainer()
 }
