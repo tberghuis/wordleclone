@@ -6,10 +6,16 @@ import kotlinx.coroutines.launch
 
 // I could make this a singleton object, which is bad in regard to testing
 class ViewModel {
-
   val wordleStateFlow = MutableStateFlow(WordleState())
-
   val snackbarSharedFlow = MutableSharedFlow<String>()
+
+  // do shit wrong
+  // select random solution startup
+  init {
+    val solution = TOP_WORDS.random()
+    println("init solution $solution")
+    wordleStateFlow.value = wordleStateFlow.value.copy(solution = solution)
+  }
 
   fun addLetter(letter: Char) {
     println("addLetter $letter")
