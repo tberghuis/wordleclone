@@ -11,3 +11,7 @@ https://quickbirdstudios.com/blog/wordle-game-swiftui/
 https://www.reddit.com/r/androiddev/comments/sbfqx7/ive_created_faradle_a_wordle_made_completely_in/
 read source code, android reference
 https://github.com/adibfara/Faradle
+
+https://github.com/PragmaticCoding/WordleFX
+https://www.pragmaticcoding.ca/javafx/wordle
+https://www.reddit.com/r/Kotlin/comments/sj1fww/wordle_in_kotlin_javafx/
