@@ -9,18 +9,8 @@ class ViewModel {
   val wordleStateFlow = MutableStateFlow(WordleState())
   val snackbarSharedFlow = MutableSharedFlow<String>()
 
-  // do shit wrong
-  // select random solution startup
-  init {
-    val solution = TOP_WORDS.random()
-    println("init solution $solution")
-    wordleStateFlow.value = wordleStateFlow.value.copy(solution = solution)
-  }
-
   fun newGame() {
-    val solution = TOP_WORDS.random()
-    val ws = WordleState(solution = solution)
-    wordleStateFlow.value = ws
+    wordleStateFlow.value = WordleState()
   }
 
 

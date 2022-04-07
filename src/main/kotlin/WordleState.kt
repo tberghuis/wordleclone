@@ -13,6 +13,6 @@ enum class GameState {
 data class WordleState(
   val wordList: List<String> = listOf("", "", "", "", "", ""),
   val cursorRow: Int = 0,
-  val solution: String = "TOMMY",
+  val solution: String = TOP_WORDS.random(),
   val gameState: GameState = GameState.PLAYING
 )
