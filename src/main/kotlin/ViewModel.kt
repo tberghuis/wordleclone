@@ -13,7 +13,6 @@ class ViewModel {
     wordleStateFlow.value = WordleState()
   }
 
-
   fun addLetter(letter: Char) {
     println("addLetter $letter")
     val ws = wordleStateFlow.value
